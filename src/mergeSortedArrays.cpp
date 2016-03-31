@@ -129,7 +129,7 @@ struct transaction * mergeSortedArrays(struct transaction *A, int ALen, struct t
 		c = (struct transaction*)malloc((ALen + BLen)*sizeof(struct transaction));
 		for (i = 0, j = 0, k = 0; k < ALen + BLen; k++)
 		{
-			if (i < ALen&&j < ALen)
+			if (i < ALen&&j < BLen)
 			{
 				flag = isOlder(A[i].date, B[j].date);
 				if (flag == 1)
@@ -150,8 +150,6 @@ struct transaction * mergeSortedArrays(struct transaction *A, int ALen, struct t
 					c[k] = B[j];
 					j++;
 				}
-
-
 			}
 			else
 			{
